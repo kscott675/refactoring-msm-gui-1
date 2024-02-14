@@ -18,4 +18,5 @@ class Director < ApplicationRecord
 
     return matching_movies
   end
+
 end

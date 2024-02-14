@@ -15,8 +15,13 @@
 class Movie < ApplicationRecord
   def director
     my_director_id = self.director_id
-    matching_directors = Director.where(id: my_director_id)
-    the_director = matching_directors.at(0)
-    return the_director
+
+    the_director = Director.find_by(id: my_director_id)
+
+    unless the_director.nil?
+      return the_director
+    else
+      return nil
+    end
   end
 end

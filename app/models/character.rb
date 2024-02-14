@@ -10,4 +10,14 @@
 #  movie_id   :integer
 #
 class Character < ApplicationRecord
+  def movie
+
+    #find id of movie and compare it to the movie id of the character
+    movie_id = self.movie_id
+
+    matching_movies = Movie.find(movie_id)
+    
+    return matching_movies
+  end
+
 end

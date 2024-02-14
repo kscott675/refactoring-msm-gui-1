@@ -14,6 +14,7 @@ class MoviesController < ApplicationController
 
   def create
     @the_movie = Movie.new
+    
     @the_movie.title = params.fetch("query_title")
     @the_movie.year = params.fetch("query_year")
     @the_movie.duration = params.fetch("query_duration")
